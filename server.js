@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 
-// Habilitar CORS para que freeCodeCamp pueda testear
+// Habilitar CORS 
 app.use(cors({ optionsSuccessStatus: 200 }));
 
 // Servir archivos estáticos
@@ -16,12 +16,12 @@ app.get('/', (req, res) => {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-// Ruta de prueba que usan los tests de FCC
+// Ruta de prueba 
 app.get('/api/hello', (req, res) => {
   res.json({ greeting: 'hello API' });
 });
 
-// Endpoint principal: /api/:date?
+// Endpoint principal
 app.get('/api/:date?', (req, res) => {
   const dateParam = req.params.date;
   let date;
@@ -57,3 +57,4 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
